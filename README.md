@@ -33,6 +33,7 @@
 [image1b]: ./output_images/undistort_road_output.png "Undistorted"
 [image2b]: ./output_images/cropped_road.png "Cropped"
 [image2c]: ./output_images/combined_thresholding.png "Thresholding"
+[image2d]: ./output_images/birdseyeview.png "Bird's Eye View"
 [input_img]: ./test_images/test3.jpg "Input Image"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./output_images/warped_straight_lines.jpg "Warp Example"
@@ -122,7 +123,17 @@ Below is the outcome of thresholding: <br />
 ![Combined Thresholding][image2c]
 
 
+###5. Birds-Eye View
+When we do perspective transform (as discussed above), we can get birds-eye view. In the example shown above, the road is a flat plane. This isn't strictly true, but we can still get a good approximation. I take 4 points in a trapezoidal shape that would represent a rectangle when looking down from road above.
+This allows use to eliminate the phenomenon by which the parallel lines seem to converge to a single point. In Birds-Eye View, we can view the lane lines as actual parallel lines.
 
+The code for this is contained in the [`line.py`](line.py).
+
+Below is the outcome of transforming road to birds-eye view perspective: <br />
+
+![Birds-Eye View][image2d]
+
+As we can see, it is very difficult to see in camera-view that the lane is curving to the right. However, in Birds-Eye view, we can easily detect that the parallel lane lines are curving to right few meters ahead. 
  
 
 
