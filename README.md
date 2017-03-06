@@ -182,12 +182,11 @@ With everything combined, when we run the pipeline on an image, we get the follw
 ##Video Output
 
 ####Project Video:
-Here's the ![Video Output][video_out]
-YouTube Link: https://youtu.be/Boe5HvpGnMQ 
+YouTube Link:     https://youtu.be/Boe5HvpGnMQ 
 <br />
 
 ####Challenge Video:
-YouTube Link: https://youtu.be/clk4ILmAuBw
+YouTube Link:     https://youtu.be/clk4ILmAuBw
 <br />
 
 
