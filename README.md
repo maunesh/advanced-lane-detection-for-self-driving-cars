@@ -142,13 +142,13 @@ Once we have already detected lane lines in an earlier frames, we can use that i
 Although, it is not always possible to detect lane lines from the history that is saved in Line class object. So if we lose track of the lines, we ca go back to the method of using thresholding and begin searching lane lines from scratch. <br />
 
 I do this using two functions:<br />
-* ([line_search_reset](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L114)) 
-* ([line_search_tracking](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L260)) 
+* [line_search_reset](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L114)
+* [line_search_tracking](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L260)
 <br />
 
 Below is the visualization of Sliding Window search: <br />
 
-![Slidig Window Search][image2d]
+![Slidig Window Search][image2e]
 
 
 
