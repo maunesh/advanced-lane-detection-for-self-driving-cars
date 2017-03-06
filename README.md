@@ -29,7 +29,8 @@
 
 [//]: # (Image/Video/Code File References)
 
-[image1]: ./examples/undistort_output.png "Undistorted"
+[image1]: ./output_images/undistort_output.png "Undistorted"
+[image1b]: ./output_images/undistort_road_output.png "Undistorted"
 [input_img]: ./test_images/test3.jpg "Input Image"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
@@ -58,7 +59,7 @@
 
 [`camera_calibration.py`](camera_calibration.py) : To calculate Calibration Matrix <br />
 [`line.py`](line.py) : Line class, contains functions to detect lane lines <br />
-[`threshold.py`](threshold.py) : Contains functions for thresholding an image
+[`threshold.py`](threshold.py) : Contains functions for thresholding an image <br />
 [`process.py`](process.py) : Contains the image processing pipeline and main function <br />
 [`find_parameters.py`](find_parameters.py) : Run GUI tool to find right parameters for various inputs <br />
 [`guiutils.py`](guiutils.py) : GUI builder class
@@ -75,23 +76,16 @@
 
 ---
 
-###Camera Calibration
-
-####1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
-
-
-The code for this step is contained in the first code cell of the IPython notebook located in "./examples/example.ipynb" (or in lines # through # of the file called `some_file.py`).  
+###1. Camera Calibration
+The camera that is being used may have distortion, which can cause erros in calculations. So we first need to calibrate the camera and calculate the calibration matrix. Camera looks at World-Points (3D) and converts them to Image-Points (2D). Using some chessboard images, that would have predictable patterns, I am calibrating the camera. <br /> 
+The code for camera calibration step is contained in the [`camera_calibration.py`](camera_calibration.py).  
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
-![alt text][image1]
-
-
-
-###1. Camera Calibration
-The camera that is being used may have distortion, which can cause erros in calculations. So we first need to calibrate the camera and calculate the calibration matrix. Camera looks at World-Points (3D) and converts them to Image-Points (2D). Using some chessboard images, that would have predictable patterns, I am calibrating the camera. The code for camera calibration step is contained in the [`camera_calibration.py`](camera_calibration.py).  
+![Undistorted Chessboard][image1]
+![Undistorted Road][image1b]
 
 
 
@@ -102,11 +96,16 @@ The camera that is being used may have distortion, which can cause erros in calc
 
 
 
-###Pipeline (single images)
+
+
+
 
 ####1. Provide an example of a distortion-corrected image.
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
 ![alt text][input_img]
+
+
+
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
