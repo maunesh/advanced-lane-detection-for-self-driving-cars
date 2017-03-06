@@ -163,26 +163,33 @@ I am fitting for f(y), rather than f(x), because the lane lines in the warped im
 ![Fit Polynomial][FitPoly]
 
 
+###8. Illustrating Lane Lines on image/frames
+Once we have detected the lane lines, we can illustrate the lane on the current frame/image, by overlaying color pixels on top of the image. 
+I am illustrating Lane Lines, Measurement Info and the Birds-Eye View on each frame, using following functions: <br />
+* [illustrate_driving_lane](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L370)
+* [illustrate_info_panel](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L471)
+* [illustrate_driving_lane_with_topdownview](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L498)
 
+<br />
 
+With everything combined, when we run the pipeline on an image, we get the follwing image as a final result.<br />
 
-####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+![Final Result][13_result]
 
-I did this in lines # through # in my code in `my_other_file.py`
-
-####6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
-
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
-
-![alt text][image6]
 
 ---
 
-###Pipeline (video)
+##Video Output
 
-####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
+####Project Video:
+Here's the ![Video Output][video_out]
+YouTube Link: https://youtu.be/Boe5HvpGnMQ 
+<br />
 
-Here's a [link to my video result](./project_video.mp4)
+####Challenge Video:
+YouTube Link: https://youtu.be/clk4ILmAuBw
+<br />
+
 
 ---
 
