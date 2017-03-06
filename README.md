@@ -60,6 +60,7 @@
 [10_lane_illustration]: ./output_images/10_w_color_result_img.png "Lane Illustration"
 [11_lane_rewarped]: ./output_images/11_color_result.png "Original Perspective"
 [13_result]: ./output_images/13_final_result.png "Result"
+[gui_demo]: ./gui_tool_demo/ezgif_com-video-to-gif.gif "Parameter Tuner GUI Tool"
 
 ###Implementation Details:
 
@@ -164,7 +165,20 @@ I am fitting for f(y), rather than f(x), because the lane lines in the warped im
 
 
 ###8. Parameter Tuning
-TODO
+Parameter Tuning is tricky, especially for the challenge video.
+
+In my pipeline, parameters can be tuned in [`process.py`](process.py).
+
+To Tune Parameters:
+* [Parameter Tuning](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/process.py#L31)
+
+I implemented a GUI tool - similar to the one I had implemented in Basic Lane Line Detection. 
+This was very helpful to determine better parameters for the Challenge Video. 
+The code for this tool is contained in [`guiutils.py`](guiutils.py) and [`find_parameters.py`](find_parameters.py) <br />
+
+Below is a demo of the GUI tool:
+
+[![Video White](gui_tool_demo/ezgif_com-video-to-gif.gif?raw=true)]
 
 
 ###9. Illustrating Lane Lines on image/frames
@@ -194,6 +208,6 @@ YouTube Link:     https://youtu.be/clk4ILmAuBw
 
 ---
 
-###Discussion
+##Reflection
 Getting good results on Harder Challenge Video was very difficult. I did not try Convolution method, but I am leaving it for future experiements. 
-I love Computer Vision, but having tried both the *Deep Learning approach* to drive the car autonomously, and the *Computer Vision approach* to detect lane lines, it made me really appreciate the potential of Deep Learning in Self-Driving Car domain. 
+I love Computer Vision, but having tried both the *Deep Learning Approach* to drive the car autonomously, and the *Computer Vision Approach* to detect lane lines, the experiece has made me really appreciate the potential of Deep Learning in Self-Driving Car domain. 
