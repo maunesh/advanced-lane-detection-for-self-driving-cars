@@ -163,7 +163,11 @@ I am fitting for f(y), rather than f(x), because the lane lines in the warped im
 ![Fit Polynomial][FitPoly]
 
 
-###8. Illustrating Lane Lines on image/frames
+###8. Parameter Tuning
+TODO
+
+
+###9. Illustrating Lane Lines on image/frames
 Once we have detected the lane lines, we can illustrate the lane on the current frame/image, by overlaying color pixels on top of the image. 
 I am illustrating Lane Lines, Measurement Info and the Birds-Eye View on each frame, using following functions: <br />
 * [illustrate_driving_lane](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L370)
@@ -171,7 +175,6 @@ I am illustrating Lane Lines, Measurement Info and the Birds-Eye View on each fr
 * [illustrate_driving_lane_with_topdownview](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L498)
 
 <br />
-
 With everything combined, when we run the pipeline on an image, we get the follwing image as a final result.<br />
 
 ![Final Result][13_result]
@@ -189,12 +192,8 @@ YouTube Link:     https://youtu.be/Boe5HvpGnMQ
 YouTube Link:     https://youtu.be/clk4ILmAuBw
 <br />
 
-
 ---
 
 ###Discussion
-
-####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
-
+Getting good results on Harder Challenge Video was very difficult. I did not try Convolution method, but I am leaving it for future experiements. 
+I love Computer Vision, but having tried both the *Deep Learning approach* to drive the car autonomously, and the *Computer Vision approach* to detect lane lines, it made me really appreciate the potential of Deep Learning in Self-Driving Car domain. 
