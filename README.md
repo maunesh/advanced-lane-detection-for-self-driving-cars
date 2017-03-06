@@ -1,7 +1,7 @@
 #Advanced Lane Detection for Self-Driving Cars
 
 [![Video White](output_videos/gif_out_track1.gif?raw=true)](https://youtu.be/Boe5HvpGnMQ)  
-> Click the GIF abobe for full video.
+> ***Click the GIF abobe for link to YouTube video of the result***
 
 ---
 
@@ -32,6 +32,7 @@
 [image1]: ./output_images/undistort_output.png "Undistorted"
 [image1b]: ./output_images/undistort_road_output.png "Undistorted"
 [image2b]: ./output_images/cropped_road.png "Cropped"
+[image2c]: ./output_images/combined_thresholding.png "Thresholding"
 [input_img]: ./test_images/test3.jpg "Input Image"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./output_images/warped_straight_lines.jpg "Warp Example"
@@ -107,13 +108,18 @@ Below is the outcome of cropping the image.
 ![Cropped][image2b]
 
 
+###4. Thresholding
+I used two methods of thresholding: Gradient Thresholing & HLS Thresholding. <br />
 
+I used Sobel Kernel for gradient thresholding in both X and Y directions. Since lane lines are likely to be vertical, I put more weight on the gradient in Y direction. I took absolute gradient values and normalized them for appropriate scaling. <br />
 
+In addition, I used HLS color channel, to handle cases when the road color is too bright or too light. I discarted L channel, which contains the information about Lightness (bright or dark), and put more emphasis on H and L channels. This way I could eliminate the lightness of the pixel out of the equation. <br />
 
+Then I combined both of the Gradient and HLS (color) threshoding into one for the final thresholded binary image. The code for this thresholding approach is contained in the [`threshold.py`](threshold.py). 
 
+Below is the outcome of thresholding: <br />
 
-
-
+![Combined Thresholding][image2c]
 
 
 
