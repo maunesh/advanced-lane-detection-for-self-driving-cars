@@ -88,21 +88,16 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 ![Undistorted Road][image1b]
 
 
+###2. Perspective Transform
+Objects appear smaller, the farther they are from view point and parallel lines seem to converge to a point when we project the 3D points to camera's 2D points. 
+This phenomenon needs to be taken into account when trying to find parallel lines of a lane. With perspective transform, we can transform road image to a bird-eye view image, in which, it is easier to detect the curving angles of lanes. <br />
+The code for Perspective Transformation is contain in the [`line.py`](line.py).
+
+Below is the outcome of perspective transform:
+![Perspective Transform][image1]
 
 
 
-
-
-
-
-
-
-
-
-
-####1. Provide an example of a distortion-corrected image.
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![alt text][input_img]
 
 
 
