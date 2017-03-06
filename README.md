@@ -169,11 +169,10 @@ Parameter Tuning is tricky, especially for the challenge video.
 
 In my pipeline, parameters can be tuned in [`process.py`](process.py).
 
-To Update parameters, modify this line of code: [Parameter Tuning](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/process.py#L31)
+To Update parameters, modify this code: [Parameter Tuning](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/process.py#L31)
 
 I implemented a GUI tool - similar to the one I had implemented in Basic Lane Line Detection. 
-This was very helpful to determine better parameters for the Challenge Video. 
-The code for this tool is contained in [`guiutils.py`](guiutils.py) and [`find_parameters.py`](find_parameters.py) <br />
+This was very helpful to determine better parameters for the Challenge Video.  The code for this tool is contained in [`guiutils.py`](guiutils.py) and [`find_parameters.py`](find_parameters.py) <br />
 
 * Below is a demo of the GUI tool:
 
@@ -203,9 +202,9 @@ With everything combined, when we run the pipeline on an image, we get the follw
 YouTube Link:     https://youtu.be/Boe5HvpGnMQ 
 <br />
 
-####Challenge Video:
-YouTube Link:     https://youtu.be/clk4ILmAuBw
-<br />
+[//]: # ####Challenge Video:
+[//]: # YouTube Link:     https://youtu.be/clk4ILmAuBw
+[//]: # <br />
 
 ---
 
