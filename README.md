@@ -202,9 +202,9 @@ With everything combined, when we run the pipeline on an image, we get the follw
 YouTube Link:     https://youtu.be/Boe5HvpGnMQ 
 <br />
 
-[//]: # ####Challenge Video:
-[//]: # YouTube Link:     https://youtu.be/clk4ILmAuBw
-[//]: # <br />
+[//]: # (####Challenge Video:)
+[//]: # (YouTube Link:     https://youtu.be/clk4ILmAuBw)
+[//]: # (<br />)
 
 ---
 
