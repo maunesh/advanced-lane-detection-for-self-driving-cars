@@ -34,6 +34,7 @@
 [image2b]: ./output_images/cropped_road.png "Cropped"
 [image2c]: ./output_images/combined_thresholding.png "Thresholding"
 [image2d]: ./output_images/birdseyeview.png "Bird's Eye View"
+[image2e]: ./output_images/sliding_window.png "Sliding Window Search"
 [input_img]: ./test_images/test3.jpg "Input Image"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./output_images/warped_straight_lines.jpg "Warp Example"
@@ -133,8 +134,23 @@ Below is the outcome of transforming road to birds-eye view perspective: <br />
 
 ![Birds-Eye View][image2d]
 
-As we can see, it is very difficult to see in camera-view that the lane is curving to the right. However, in Birds-Eye view, we can easily detect that the parallel lane lines are curving to right few meters ahead. 
+*As we can see, it is very difficult to see in camera-view that the lane is curving to the right. However, in Birds-Eye view, we can easily detect that the parallel lane lines are curving to right few meters ahead.*
  
+
+###6. Sliding Window Search
+Once we have already detected lane lines in an earlier frames, we can use that information and use a sliding window, placed around the line centers, to find and follow lane lines from bottom to the top of the image/frame. This allows us to do a highly restricted search and saves a lot of processing time. 
+Although, it is not always possible to detect lane lines from the history that is saved in Line class object. So if we lose track of the lines, we ca go back to the method of using thresholding and begin searching lane lines from scratch. <br />
+
+I do this using two functions:<br />
+* ([line_search_reset](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L114)) 
+* ([line_search_tracking](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L260)) 
+<br />
+
+Below is the visualization of Sliding Window search: <br />
+
+![Slidig Window Search][image2d]
+
+
 
 
 
