@@ -4,26 +4,47 @@
 [![Video White](output_videos/gif_out_track1.gif?raw=true)](https://youtu.be/Boe5HvpGnMQ)  
 
 
-The goals / steps of this project are the following:
+###Objectives:
 
 * Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
 * Apply a distortion correction to raw images.
-* Use color transforms, gradients, etc., to create a thresholded binary image.
+* Use color transforms, gradients, to create a thresholded binary image.
 * Apply a perspective transform to rectify binary image ("birds-eye view").
 * Detect lane pixels and fit to find the lane boundary.
 * Determine the curvature of the lane and vehicle position with respect to center.
 * Warp the detected lane boundaries back onto the original image.
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
+
 [//]: # (Image/Video References)
 
 [image1]: ./examples/undistort_output.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
+[input_img]: ./test_images/test3.jpg "Input Image"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
-[video1]: ./project_video.mp4 "Video"
+
+[video_in]: ./project_video.mp4 "Video"
+[video_out]: ./output_videos/video_out_track1.mp4 "Track 1 Video"
+
+[gif_track1]:   ./output_videos/gif_out_track1.gif "Track 1 GIF"
+
+[calib1]: ./test_images/calibration1.jpg "Chessboard"
+[calib_chesss]: ./output_images/undist_img_calibration1.png "Calibration Chessboard"
+[01_calib_road]: ./output_images/01_undist_img.png "Calibration Road"
+[02_cropped]: ./output_images/02_cropped.png "Cropped Road"
+[03_sobel_thresh]: ./output_images/03_combined_gradient_img.png "Sobel Threshold"
+[04_hls_thresh]: ./output_images/04_combined_hls_img.png "HLS Threshold"
+[05_combined_thresh]: ./output_images/05_combined_thresh_result_img.png "Combined Threshold"
+[07_warped]: ./output_images/07_warped_img.png "Warped Thresholded"
+[08_sliding_window]: ./output_images/08_searching_img.png "Sliding Window"
+[10_lane_illustration]: ./output_images/10_w_color_result_img.png "Lane Illustration"
+[11_lane_rewarped]: ./output_images/11_color_result.png "Original Perspective"
+[13_result]: ./output_images/13_final_result.png "Result"
+
+
+
 
 ---
 ###Writeup / README
@@ -47,7 +68,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 ####1. Provide an example of a distortion-corrected image.
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![alt text][image2]
+![alt text][input_img]
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
