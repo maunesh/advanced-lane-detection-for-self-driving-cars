@@ -1,7 +1,7 @@
-
 #Advanced Lane Detection for Self-Driving Cars
 
 [![Video White](output_videos/gif_out_track1.gif?raw=true)](https://youtu.be/Boe5HvpGnMQ)  
+> Click the GIF abobe for full video.
 
 ---
 
@@ -27,7 +27,7 @@
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
 
-[//]: # (Image/Video File References)
+[//]: # (Image/Video/Code File References)
 
 [image1]: ./examples/undistort_output.png "Undistorted"
 [input_img]: ./test_images/test3.jpg "Input Image"
@@ -55,6 +55,12 @@
 [13_result]: ./output_images/13_final_result.png "Result"
 
 
+[`camera_calibration.py`](camera_calibration.py): To calculate Calibration Matrix
+[`line.py`](line.py): Line class, contains functions to detect lane lines
+[`threshold.py`](threshold.py): Contains functions for thresholding an image
+[`process.py`](process.py): Contains the image processing pipeline and main function
+[`find_parameters.py`](find_parameters.py): Run GUI tool to find right parameters for various inputs
+[`guiutils.py`](guiutils.py): GUI builder class
 
 
 ---
@@ -63,21 +69,15 @@
 
 <p align="center">
     <img src="output_images/Pipeline/pipeline.png" alt="Pipeline" /><br>
-    <b>Pipeline for detecting Lanes</b><br>
+    <b>[Pipeline for detecting Lanes]</b><br>
 </p>
 
-
-
-
-
-
-
-
-
+---
 
 ###Camera Calibration
 
 ####1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+
 
 The code for this step is contained in the first code cell of the IPython notebook located in "./examples/example.ipynb" (or in lines # through # of the file called `some_file.py`).  
 
@@ -86,6 +86,20 @@ I start by preparing "object points", which will be the (x, y, z) coordinates of
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
 ![alt text][image1]
+
+
+
+###1. Camera Calibration
+The camera that is being used may have distortion, which can cause erros in calculations. So we first need to calibrate the camera and calculate the calibration matrix. Camera looks at World-Points (3D) and converts them to Image-Points (2D). Using some chessboard images, that would have predictable patterns, I am calibrating the camera. The code for camera calibration step is contained in the [`camera_calibration.py`](camera_calibration.py).  
+
+
+
+
+
+
+
+
+
 
 ###Pipeline (single images)
 
