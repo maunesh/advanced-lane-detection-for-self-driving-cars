@@ -177,7 +177,7 @@ The code for this tool is contained in [`guiutils.py`](guiutils.py) and [`find_p
 
 * Below is a demo of the GUI tool:
 
-Here I am trying to determine the correct threshold values for Gradient and X direction and Gradient in Y direction. 
+Here I am trying to determine the correct threshold values for Gradient in X direction and Gradient in Y direction. 
 
 [![Video White](gui_tool_demo/ezgif_com-video-to-gif.gif?raw=true)]
 
