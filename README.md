@@ -1,7 +1,7 @@
 
 #Advanced Lane Detection for Self-Driving Cars
 
-[![Video White](outout_videos/gif_out_track1.gif?raw=true)](https://youtu.be/Boe5HvpGnMQ)  
+[![Video White](output_videos/gif_out_track1.gif?raw=true)](https://youtu.be/Boe5HvpGnMQ)  
 
 
 The goals / steps of this project are the following:
