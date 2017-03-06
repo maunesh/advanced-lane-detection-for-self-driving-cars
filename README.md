@@ -36,7 +36,7 @@
 [image2d]: ./output_images/birdseyeview.png "Bird's Eye View"
 [image2e]: ./output_images/sliding_window.png "Sliding Window Search"
 [polynomial]: ./output_images/polynomial.png "Polynomial"
-[FitPoly]: ./output_images/color_fit_lines.png "Fit Polynomial"
+[FitPoly]: ./output_images/color_fit_lines.jpg "Fit Polynomial"
 [input_img]: ./test_images/test3.jpg "Input Image"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./output_images/warped_straight_lines.jpg "Warp Example"
