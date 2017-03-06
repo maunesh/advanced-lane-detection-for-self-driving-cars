@@ -54,13 +54,14 @@
 [11_lane_rewarped]: ./output_images/11_color_result.png "Original Perspective"
 [13_result]: ./output_images/13_final_result.png "Result"
 
+###Implementation Details
 
-[`camera_calibration.py`](camera_calibration.py): To calculate Calibration Matrix
-[`line.py`](line.py): Line class, contains functions to detect lane lines
-[`threshold.py`](threshold.py): Contains functions for thresholding an image
-[`process.py`](process.py): Contains the image processing pipeline and main function
-[`find_parameters.py`](find_parameters.py): Run GUI tool to find right parameters for various inputs
-[`guiutils.py`](guiutils.py): GUI builder class
+[`camera_calibration.py`](camera_calibration.py) : To calculate Calibration Matrix
+[`line.py`](line.py) : Line class, contains functions to detect lane lines
+[`threshold.py`](threshold.py) : Contains functions for thresholding an image
+[`process.py`](process.py) : Contains the image processing pipeline and main function
+[`find_parameters.py`](find_parameters.py) : Run GUI tool to find right parameters for various inputs
+[`guiutils.py`](guiutils.py) : GUI builder class
 
 
 ---
