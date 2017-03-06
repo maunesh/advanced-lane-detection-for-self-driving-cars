@@ -31,6 +31,7 @@
 
 [image1]: ./output_images/undistort_output.png "Undistorted"
 [image1b]: ./output_images/undistort_road_output.png "Undistorted"
+[image2b]: ./output_images/cropped_road.png "Cropped"
 [input_img]: ./test_images/test3.jpg "Input Image"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./output_images/warped_straight_lines.jpg "Warp Example"
@@ -93,11 +94,30 @@ Objects appear smaller, the farther they are from view point and parallel lines 
 This phenomenon needs to be taken into account when trying to find parallel lines of a lane. With perspective transform, we can transform road image to a bird-eye view image, in which, it is easier to detect the curving angles of lanes. <br />
 The code for Perspective Transformation is contain in the [`line.py`](line.py).
 
-Below is the outcome of perspective transform:
+Below is the outcome of perspective transform: <br />
+
 ![Perspective Transform][image4]
 
 
+###3. Cropping
+For the purpose of detecting lane lines, we only need to focus on the regions where we are likely to see the lanes. For this reason, I am cropping the image and doing the further image processing only on certain regions of the image. I also resize the image to smaller dimensions. This helps with making the image processing pipeline faster. 
 
+Below is the outcome of cropping the image.
+
+![Cropped][image2b]
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
