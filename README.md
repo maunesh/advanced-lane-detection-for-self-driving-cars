@@ -3,6 +3,17 @@
 
 [![Video White](output_videos/gif_out_track1.gif?raw=true)](https://youtu.be/Boe5HvpGnMQ)  
 
+---
+
+###Dependencies:
+* Python 3.5.x
+* NumPy
+* CV2
+* matplotlib
+* glob
+* PIL
+* moviepy
+
 
 ###Objectives:
 
@@ -16,17 +27,7 @@
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
 
-###Dependencies:
-* Python 3.5.x
-* NumPy
-* CV2
-* matplotlib
-* glob
-* PIL
-* moviepy
-
-
-[//]: # (Image/Video References)
+[//]: # (Image/Video File References)
 
 [image1]: ./examples/undistort_output.png "Undistorted"
 [input_img]: ./test_images/test3.jpg "Input Image"
@@ -57,11 +58,23 @@
 
 
 ---
-###Writeup / README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
+###Pipeline 
 
-You're reading it!
+<p align="center">
+    <img src="output_images/Pipeline/pipeline.png" alt="Pipeline" /><br>
+    <b>Pipeline for detecting Lanes</b><br>
+</p>
+
+
+
+
+
+
+
+
+
+
 ###Camera Calibration
 
 ####1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
