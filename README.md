@@ -1,11 +1,11 @@
-#Advanced Lane Detection for Self-Driving Cars
+# Advanced Lane Detection for Self-Driving Cars
 
 [![Video White](output_videos/gif_out_track1.gif?raw=true)](https://youtu.be/Boe5HvpGnMQ)  
 > ***Click the GIF abobe for link to YouTube video of the result***
 
 ---
 
-###Dependencies:
+### Dependencies:
 * Python 3.5.x
 * NumPy
 * CV2
@@ -15,7 +15,7 @@
 * moviepy
 
 
-###Objectives:
+### Objectives:
 
 * Compute the camera calibration matrix and distortion coefficients using a set of chessboard images.
 * Apply a distortion correction to video frames.
@@ -62,7 +62,7 @@
 [13_result]: ./output_images/13_final_result.png "Result"
 [gui_demo]: ./gui_tool_demo/ezgif_com-video-to-gif.gif "Parameter Tuner GUI Tool"
 
-###Implementation Details:
+### Implementation Details:
 
 [`camera_calibration.py`](camera_calibration.py) : To calculate Calibration Matrix <br />
 [`line.py`](line.py) : Line class, contains functions to detect lane lines <br />
@@ -74,7 +74,7 @@
 
 ---
 
-###Pipeline 
+### Pipeline 
 
 <p align="center">
     <img src="output_images/Pipeline/pipeline.png" alt="Pipeline" /><br>
@@ -83,7 +83,7 @@
 
 ---
 
-###1. Camera Calibration
+### 1. Camera Calibration
 The camera that is being used may have distortion, which can cause erros in calculations. So we first need to calibrate the camera and calculate the calibration matrix. Camera looks at World-Points (3D) and converts them to Image-Points (2D). Using some chessboard images, that would have predictable patterns, I am calibrating the camera. <br /> 
 The code for camera calibration step is contained in the [`camera_calibration.py`](camera_calibration.py).  
 
@@ -95,7 +95,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 ![Undistorted Road][image1b]
 
 
-###2. Perspective Transform
+### 2. Perspective Transform
 Objects appear smaller, the farther they are from view point and parallel lines seem to converge to a point when we project the 3D points to camera's 2D points. 
 This phenomenon needs to be taken into account when trying to find parallel lines of a lane. With perspective transform, we can transform road image to a bird-eye view image, in which, it is easier to detect the curving angles of lanes. <br />
 The code for Perspective Transformation is contain in the [`line.py`](line.py).
@@ -105,7 +105,7 @@ Below is the outcome of perspective transform: <br />
 ![Perspective Transform][image4]
 
 
-###3. Cropping
+### 3. Cropping
 For the purpose of detecting lane lines, we only need to focus on the regions where we are likely to see the lanes. For this reason, I am cropping the image and doing the further image processing only on certain regions of the image. I also resize the image to smaller dimensions. This helps with making the image processing pipeline faster. 
 
 Below is the outcome of cropping the image.
@@ -113,7 +113,7 @@ Below is the outcome of cropping the image.
 ![Cropped][image2b]
 
 
-###4. Thresholding
+### 4. Thresholding
 I used two methods of thresholding: Gradient Thresholing & HLS Thresholding. <br />
 
 I used Sobel Kernel for gradient thresholding in both X and Y directions. Since lane lines are likely to be vertical, I put more weight on the gradient in Y direction. I took absolute gradient values and normalized them for appropriate scaling. <br />
@@ -127,7 +127,7 @@ Below is the outcome of thresholding: <br />
 ![Combined Thresholding][image2c]
 
 
-###5. Birds-Eye View
+### 5. Birds-Eye View
 When we do perspective transform (as discussed above), we can get birds-eye view. In the example shown above, the road is a flat plane. This isn't strictly true, but we can still get a good approximation. I take 4 points in a trapezoidal shape that would represent a rectangle when looking down from road above.
 This allows use to eliminate the phenomenon by which the parallel lines seem to converge to a single point. In Birds-Eye View, we can view the lane lines as actual parallel lines.
 
@@ -140,7 +140,7 @@ Below is the outcome of transforming road to birds-eye view perspective: <br />
 *As we can see, it is very difficult to see in camera-view that the lane is curving to the right. However, in Birds-Eye view, we can easily detect that the parallel lane lines are curving to right few meters ahead.*
  
 
-###6. Sliding Window Search
+### 6. Sliding Window Search
 Once we have already detected lane lines in an earlier frames, we can use that information and use a sliding window, placed around the line centers, to find and follow lane lines from bottom to the top of the image/frame. This allows us to do a highly restricted search and saves a lot of processing time. 
 Although, it is not always possible to detect lane lines from the history that is saved in Line class object. So if we lose track of the lines, we ca go back to the method of using thresholding and begin searching lane lines from scratch. <br />
 
@@ -154,7 +154,7 @@ Below is the visualization of Sliding Window search: <br />
 ![Slidig Window Search][image2e]
 
 
-###7. Radius of the curvature
+### 7. Radius of the curvature
 Now with the located the lane line pixels, we can use their x and y pixel positions, to fit a second order polynomial curve:
 
 ![Fit Polynomial][polynomial]
@@ -164,7 +164,7 @@ I am fitting for f(y), rather than f(x), because the lane lines in the warped im
 ![Fit Polynomial][FitPoly]
 
 
-###8. Parameter Tuning
+###  8. Parameter Tuning
 Parameter Tuning is tricky, especially for the challenge video.
 
 In my pipeline, parameters can be tuned in [`process.py`](process.py).
@@ -180,8 +180,7 @@ Here I am trying to determine the correct threshold values for Gradient in X dir
 
 [![Video White](gui_tool_demo/ezgif_com-video-to-gif.gif?raw=true)]
 
-
-###9. Illustrating Lane Lines on image/frames
+### 9. Illustrating Lane Lines on image/frames
 Once we have detected the lane lines, we can illustrate the lane on the current frame/image, by overlaying color pixels on top of the image. 
 I am illustrating Lane Lines, Measurement Info and the Birds-Eye View on each frame, using following functions: <br />
 * [illustrate_driving_lane](https://github.com/maunesh/advanced-lane-detection-for-self-driving-cars/blob/master/line.py#L370)
@@ -196,9 +195,9 @@ With everything combined, when we run the pipeline on an image, we get the follw
 
 ---
 
-##Video Output
+## Video Output
 
-####Project Video:
+#### Project Video:
 YouTube Link:     https://youtu.be/Boe5HvpGnMQ 
 <br />
 
@@ -208,6 +207,6 @@ YouTube Link:     https://youtu.be/Boe5HvpGnMQ
 
 ---
 
-##Reflection
+## Reflection
 Getting good results on Harder Challenge Video was very difficult. I did not try Convolution method, but I am leaving it for future experiements. 
 I love Computer Vision, but having tried both the *Deep Learning Approach* to drive the car autonomously, and the *Computer Vision Approach* to detect lane lines, the experiece has made me really appreciate the potential of Deep Learning in Self-Driving Car domain. 
